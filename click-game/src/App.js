@@ -7,8 +7,14 @@ import cards from "./cards.json";
 class App extends Component {
 
 state = {
-  cards
+  cards,
+  score:  0,
+  bestScore: 0
 };
+
+selectCard = event => {
+
+}
 
 render() {
   return (
