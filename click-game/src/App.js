@@ -15,7 +15,7 @@ state = {
 selectCard = event => {
    for(let i=0; i<cards.length; i++){
      if(cards[i].count === 0){
-       console.log('cat');
+      this.setState({ score: this.state.score + 1 });
      }
    }
   // this.setState({ score: this.state.score + 1 });
