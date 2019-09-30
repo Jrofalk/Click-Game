@@ -17,6 +17,9 @@ selectCard = event => {
      if(cards[i].count === 0){
       this.setState({ score: this.state.score + 1 });
      }
+     else{
+       this.setState({ score: this.state.score = 0});
+     }
    }
   // this.setState({ score: this.state.score + 1 });
 }
@@ -24,7 +27,7 @@ selectCard = event => {
 render() {
   return (
     <Wrapper>
-      <Title>Cards {this.state.score}</Title>
+      <Title>Cards {this.state.score} {this.state.bestScore}</Title>
       {this.state.cards.map(card => (
         <Card
           selectCard={this.selectCard}
