@@ -36,6 +36,9 @@ class App extends Component {
       this.setState({ score: this.state.score + 1 });
       this.setState({clicked: this.state.clicked.concat(imageSelected)})
       this.state.cards.sort(() => Math.random() - 0.5)
+      if(this.state.score === 10) {
+        this.gameLoss();
+      }
     }
    }
 
