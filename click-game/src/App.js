@@ -29,19 +29,19 @@ class App extends Component {
   
     if(isClicked){
       this.gameLoss();
+      this.state.cards.sort(() => Math.random() - 0.5)
     }
     else{
       this.setState({ score: this.state.score + 1 });
       this.setState({clicked: this.state.clicked.concat(imageSelected)})
+      this.state.cards.sort(() => Math.random() - 0.5)
     }
-  
-
-    
    }
+
 render() {
   return (
     <Wrapper>
-      <Title>Cards Current Streak:{this.state.score} Best Score:{this.state.bestScore}</Title>
+      <Title>Rose Current Streak:{this.state.score} Best Score:{this.state.bestScore}</Title>
       {this.state.cards.map(card => (
         <Card
           selectCard={this.selectCard}
