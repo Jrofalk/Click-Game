@@ -26,17 +26,24 @@ gameLoss = () => {
 }
 
 selectCard = event => {
-   for(let i=0; i<cards.length; i++){
-     if(cards[i].count === 0){
-      cards[i].count = cards[i].count + 1;
-      this.setState({ score: this.state.score + 1 });
-     }
-     else{
-       this.gameLoss();
-     }
-   }
+  const imageSelected = event.target.id;
+  const isClicked = this.state.clicked.find(imageSelected);
+
+  if(isClicked){
+    this.gameLoss();
+  }
+//    for(let i=0; i<cards.length; i++){
+//      if(cards[i].count === 0 || cards[i].clicked === false){
+//       cards[i].count = cards[i].count + 1;
+//       this.setState({ score: this.state.score + 1 });
+      
+//      }
+//      else{
+//        this.gameLoss();
+//      }
+//    }
   
-}
+ }
 
 render() {
   return (
