@@ -14,9 +14,13 @@ state = {
 
 gameLoss = () => {
   if(this.state.score > this.state.bestScore){
-    this.setState({bestScore: this.state.score});
+    this.setState({bestScore: this.state.score})
     console.log(this.state.bestScore);
   }
+  this.state.cards.forEach(card => {
+    card.count = 0;
+  });
+  this.setState({ score: 0});
 
 
 }
@@ -28,7 +32,6 @@ selectCard = event => {
       this.setState({ score: this.state.score + 1 });
      }
      else{
-       this.setState({ score: 0});
        this.gameLoss();
      }
    }
