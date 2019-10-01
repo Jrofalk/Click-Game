@@ -29,6 +29,7 @@ class App extends Component {
   
     if(isClicked){
       this.gameLoss();
+      //This sorts the cards
       this.state.cards.sort(() => Math.random() - 0.5)
     }
     else{
@@ -41,7 +42,7 @@ class App extends Component {
 render() {
   return (
     <Wrapper>
-      <Title>Rose Current Streak:{this.state.score} Best Score:{this.state.bestScore}</Title>
+      <Title>Rose Tattoo Current Streak:{this.state.score} Best Score:{this.state.bestScore}</Title>
       {this.state.cards.map(card => (
         <Card
           selectCard={this.selectCard}
