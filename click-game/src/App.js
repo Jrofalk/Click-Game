@@ -9,7 +9,8 @@ class App extends Component {
 state = {
   cards,
   score:  0,
-  bestScore: 0
+  bestScore: 0,
+  clicked: []
 };
 
 gameLoss = () => {
@@ -18,7 +19,8 @@ gameLoss = () => {
     console.log(this.state.bestScore);
   }
   this.state.cards.forEach(card => {
-    card.count = 0;
+    card.clicked = false;
+    console.log(this.state.cards);
   });
   this.setState({ score: 0});
 
@@ -27,11 +29,16 @@ gameLoss = () => {
 
 selectCard = event => {
   const imageSelected = event.target.id;
-  const isClicked = this.state.clicked.find(imageSelected);
+  const isClicked = this.state.clicked.indexOf(imageSelected) > -1;
 
   if(isClicked){
     this.gameLoss();
   }
+  else{
+    this.setState({ score: this.state.score + 1 });
+    this.setState({clicked: this.state.clicked})
+  }
+
 //    for(let i=0; i<cards.length; i++){
 //      if(cards[i].count === 0 || cards[i].clicked === false){
 //       cards[i].count = cards[i].count + 1;
