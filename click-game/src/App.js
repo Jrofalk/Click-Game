@@ -36,7 +36,7 @@ selectCard = event => {
   }
   else{
     this.setState({ score: this.state.score + 1 });
-    this.setState({clicked: this.state.clicked})
+    this.setState({clicked: this.state.clicked.concat(imageSelected)})
   }
 
 //    for(let i=0; i<cards.length; i++){
