@@ -28,7 +28,7 @@ selectCard = event => {
       this.setState({ score: this.state.score + 1 });
      }
      else{
-       this.setState({ score: this.state.score = 0});
+       this.setState({ score: 0});
        this.gameLoss();
      }
    }
