@@ -15,13 +15,14 @@ state = {
 selectCard = event => {
    for(let i=0; i<cards.length; i++){
      if(cards[i].count === 0){
+      cards[i].count = cards[i].count + 1;
       this.setState({ score: this.state.score + 1 });
      }
      else{
        this.setState({ score: this.state.score = 0});
      }
    }
-  // this.setState({ score: this.state.score + 1 });
+  
 }
 
 render() {
