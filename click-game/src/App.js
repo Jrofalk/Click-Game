@@ -12,6 +12,15 @@ state = {
   bestScore: 0
 };
 
+gameLoss = () => {
+  if(this.state.score > this.state.bestScore){
+    this.setState({bestScore: this.state.score});
+    console.log(this.state.bestScore);
+  }
+
+
+}
+
 selectCard = event => {
    for(let i=0; i<cards.length; i++){
      if(cards[i].count === 0){
@@ -20,6 +29,7 @@ selectCard = event => {
      }
      else{
        this.setState({ score: this.state.score = 0});
+       this.gameLoss();
      }
    }
   
@@ -28,7 +38,7 @@ selectCard = event => {
 render() {
   return (
     <Wrapper>
-      <Title>Cards {this.state.score} {this.state.bestScore}</Title>
+      <Title>Cards Current Streak:{this.state.score} Best Score:{this.state.bestScore}</Title>
       {this.state.cards.map(card => (
         <Card
           selectCard={this.selectCard}
