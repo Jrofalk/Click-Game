@@ -4,6 +4,8 @@ import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import cards from "./cards.json";
 
+//Fix logic so that you dont have to click an image again to present win scenario
+
 
 class App extends Component {
 
@@ -25,11 +27,13 @@ class App extends Component {
   
   selectCard = event => {
     const imageSelected = event.target.id;
+    //Evaulates whether the card has been clicked on.
     const isClicked = this.state.clicked.indexOf(imageSelected) > -1;
+    
   
     if(isClicked){
       this.gameLoss();
-      //This sorts the cards
+      //This sorts the cards.
       this.state.cards.sort(() => Math.random() - 0.5)
     }
     else{
@@ -38,6 +42,7 @@ class App extends Component {
       this.state.cards.sort(() => Math.random() - 0.5)
       if(this.state.score === 10) {
         this.gameLoss();
+        
       }
     }
    }
