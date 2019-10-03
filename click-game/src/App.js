@@ -16,7 +16,7 @@ class App extends Component {
     clicked: []
   };
   
-  gameLoss = () => {
+  gameSet = () => {
     if(this.state.score > this.state.bestScore){
       this.setState({bestScore: this.state.score})
       console.log(this.state.bestScore);
@@ -32,7 +32,7 @@ class App extends Component {
     
   
     if(isClicked){
-      this.gameLoss();
+      this.gameSet();
       //This sorts the cards.
       this.state.cards.sort(() => Math.random() - 0.5)
     }
@@ -41,7 +41,7 @@ class App extends Component {
       this.setState({clicked: this.state.clicked.concat(imageSelected)})
       this.state.cards.sort(() => Math.random() - 0.5)
       if(this.state.score === 10) {
-        this.gameLoss();
+        this.gameSet();
         
       }
     }
